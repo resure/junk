@@ -1,0 +1,125 @@
+
+// BEM.DOM.decl({block: 'input', theme: 'material'}, {
+//     onSetMod: {
+//         js: function () {
+//             this.__base.apply(this, arguments);
+
+//             if (this.val()) {
+//                 this.setMod('filled', 'yes');
+//             }
+
+//             this.on('change', this._checkValuePresence);
+//         }
+//     },
+//     _checkValuePresence: function () {
+//         if (this.val()) {
+//             this.setMod('filled', 'yes');
+//         } else {
+//             this.delMod('filled');
+//         }
+//     }
+// });
+
+.input {
+    &_theme {
+        &_material {
+            .input__clear {
+                opacity: 0;
+                transition: 150ms opacity linear;
+            }
+
+            .input__control {
+                padding-left: 0;
+            }
+
+            .input__control::placeholder {
+                opacity: 0;
+                transition: 100ms opacity linear;
+            }
+
+            .input__label {
+                transition-duration: .2s;
+                transition-timing-function: cubic-bezier(.4,0,.2,1);
+                color: rgba(0,0,0,.4);
+                font-size: 16px;
+                left: 0;
+                right: 0;
+                pointer-events: none;
+                position: absolute;
+                display: block;
+                top: 7px;
+                width: 100%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-align: left;
+            }
+
+            &.input_focused_yes {
+                .input__control {
+                    &::placeholder {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &.input_focused_yes,
+            &.input_filled_yes {
+                .input__label {
+                    top: -10px;
+                    font-size: 12px;
+                    color: #666;
+                }
+            }
+
+            .input__box {
+                border-bottom: 1px solid #dbdbdb;
+
+                &:before {
+                    border: 0;
+                }
+
+                &:after {
+                    background-color: #ffdb4c;
+                    bottom: -1px;
+                    content: '';
+                    height: 2px;
+                    left: 45%;
+                    position: absolute;
+                    transition-duration: 275ms;
+                    transition-timing-function: cubic-bezier(.4,0,.2,1);
+                    visibility: hidden;
+                    width: 10px;
+                }
+            }
+
+            &.input_focused_yes,
+            &:hover {
+                .input__clear {
+                    opacity: 0.3;
+                }
+            }
+
+            &.input_focused_yes {
+                .input__box {
+                    border-bottom-color: #eee;
+
+                    &:after {
+                        left: 0;
+                        visibility: visible;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.input_theme_normal.input_type_textarea .input__box:before {
+    border-color: #dbdbdb;
+}
+
+.input_theme_normal.input_type_textarea.input_focused_yes .input__box:before {
+    border-color: #ffdb4c;
+    border-width: 2px;
+    box-shadow: none;
+}
