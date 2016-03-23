@@ -14,6 +14,7 @@
 		"GitGutter",
 		"Javascript Beautify",
 		"JavaScriptNext - ES6 Syntax",
+		"LESS",
 		"Local History",
 		"Markdown Extended",
 		"Missing Palette Commands",
