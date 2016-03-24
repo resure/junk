@@ -20,6 +20,7 @@
 		"Oceanic Next Color Scheme",
 		"Package Control",
 		"PlainTasks",
+		"PlainNotes",
 		"SideBarEnhancements",
 		"SublimeLinter",
 		"SublimeLinter-contrib-xo",
