@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"Babel",
 		"DocBlockr",
 		"Dotfiles Syntax Highlighting",
 		"EditorConfig",
@@ -13,7 +14,6 @@
 		"Git",
 		"GitGutter",
 		"Javascript Beautify",
-		"JavaScriptNext - ES6 Syntax",
 		"LESS",
 		"Local History",
 		"Markdown Extended",
